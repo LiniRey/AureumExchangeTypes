@@ -1,0 +1,46 @@
+{
+  "name": "@aureumtools/exchange-types",
+  "version": "0.1.0",
+  "description": "Universal exchange format types for the Aureum tool ecosystem (Narrator, Prompter, future Karten/RPG/Stammbaum/Worldbuilding tools).",
+  "keywords": ["aureum", "exchange", "types", "narrator", "prompter"],
+  "license": "MIT",
+  "author": "linirey",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LiniRey/AureumExchangeTypes.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LiniRey/AureumExchangeTypes/issues"
+  },
+  "homepage": "https://github.com/LiniRey/AureumExchangeTypes#readme",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
